@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>استكمال ملف الطالب</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container">
+        <button onclick="window.location.href='index.html'" class="back-btn">← رجوع للرئيسية</button>
+        <h2 style="text-align: center; color: white;">بيانات الطالب</h2>
+        <form onsubmit="submitToAdmin(event)">
+            <select name="المرحلة_التعليمية" required>
+                <option value="" disabled selected>اختر المرحلة...</option>
+                <option>ابتدائي</option><option>إعدادي</option><option>ثانوي</option>
+            </select>
+            <input type="text" name="المادة_المطلوبة" placeholder="المادة المطلوبة (مثلاً: رياضيات)" required>
+            <select name="نظام_التدريس" onchange="handleModeChange(this.value, 'st-geo')" required>
+                <option value="online">أونلاين</option>
+                <option value="offline">أوفلاين (حضوري)</option>
+            </select>
+            <div id="st-geo" style="display:none;">
+                <select name="المحافظة" class="city-list"><option value="">اختر المحافظة...</option></select>
+                <input type="text" name="المنطقة_بالتفصيل" placeholder="اكتب المنطقة (مثلاً: شبين الكوم)">
+            </div>
+            <button type="submit" class="main-btn">إرسال الطلب للأدمن</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية التعليم - Value Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-card">  	
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form id="mainForm">
+                <label for="chk" aria-hidden="true">إنشاء حساب</label>
+                
+                <div class="role-selector">
+                    <input type="radio" name="role" value="student" id="r-student" checked>
+                    <label for="r-student" class="role-btn"> طالب</label>
+                    <input type="radio" name="role" value="teacher" id="r-teacher">
+                    <label for="r-teacher" class="role-btn"> معلم</label>
+                </div>
+
+                <input type="text" id="regName" placeholder="الاسم الكامل" required>
+                <input type="email" id="regEmail" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="regPass" placeholder="كلمة المرور" required>
+                <input type="number" id="regPhone" placeholder="رقم الهاتف" required>
+                
+                <button type="button" class="main-btn" onclick="saveBasicInfoAndNext()">متابعة التسجيل</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">تسجيل دخول</label>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit" class="main-btn">دخول</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
