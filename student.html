@@ -2,28 +2,40 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>استكمال ملف الطالب</title>
+    <title>استكمال ملف الطالب | Value Academy</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="glass-container">
-        <button onclick="window.location.href='index.html'" class="back-btn">← رجوع للرئيسية</button>
+        <button onclick="window.location.href='index.html'" class="back-btn">← رجوع</button>
         <h2 style="text-align: center; color: white;">بيانات الطالب</h2>
+        
         <form onsubmit="submitToAdmin(event)">
-            <select name="المرحلة_التعليمية" required>
-                <option value="" disabled selected>اختر المرحلة...</option>
-                <option>ابتدائي</option><option>إعدادي</option><option>ثانوي</option>
+            <select name="المرحلة" required>
+                <option value="" disabled selected>المرحلة التعليمية...</option>
+                <option>ابتدائي</option>
+                <option>إعدادي</option>
+                <option>ثانوي</option>
+                <option>كورس برمجة / لغات</option>
             </select>
-            <input type="text" name="المادة_المطلوبة" placeholder="المادة المطلوبة (مثلاً: رياضيات)" required>
-            <select name="نظام_التدريس" onchange="handleModeChange(this.value, 'st-geo')" required>
+
+            <input type="text" name="المادة" placeholder="المادة المطلوبة" required>
+
+            <input type="number" name="سعر_الحصة_المتوقع" placeholder="سعر الحصة المناسب لك (EGP)" required>
+
+            <select name="النظام" onchange="handleModeChange(this.value, 'st-geo')" required>
                 <option value="online">أونلاين</option>
                 <option value="offline">أوفلاين (حضوري)</option>
             </select>
+
             <div id="st-geo" style="display:none;">
-                <select name="المحافظة" class="city-list"><option value="">اختر المحافظة...</option></select>
-                <input type="text" name="المنطقة_بالتفصيل" placeholder="اكتب المنطقة (مثلاً: شبين الكوم)">
+                <select name="المحافظة" class="city-list">
+                    <option value="">اختر المحافظة...</option>
+                </select>
+                <input type="text" name="المنطقة" placeholder="المنطقة بالتفصيل (مثلاً: شبين الكوم)">
             </div>
+
             <button type="submit" class="main-btn">إرسال الطلب للأدمن</button>
         </form>
     </div>
